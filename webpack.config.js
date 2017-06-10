@@ -3,8 +3,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    '1': './1/main.js',
-    2: './2/main.js'
+    '1': './01-hello-world-and-jsx/main.js',
+    '2': './02-create-a-custom-component/main.js',
+    '3': './03-component-state/main.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -35,10 +36,16 @@ module.exports = {
       template: 'src/index.ejs',
       chunks: ['1'],
       filename: '1.html'
-    }) //,
-    // new HtmlWebpackPlugin({
-      // chunks: [2],
-      // filename: '2.html'
-    // })
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      chunks: ['2'],
+      filename: '2.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      chunks: ['3'],
+      filename: '3.html'
+    })
   ]
 };

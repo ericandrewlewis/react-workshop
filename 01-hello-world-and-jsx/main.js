@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 
 ReactDOM.render(
   React.createElement(
+    // The type of the component
     'h1',
-    {
-      // Props (render to element attributes)
-    },
-    'Hiii'
+    // Props (none just yet)
+    {},
+    // The component children
+    'Hi!'
   ),
   document.getElementById('root')
 );
@@ -41,7 +42,7 @@ ReactDOM.render(
 //
 // EXERCISE:
 //
-// Replace the React.createElement() call in the above JavaScript with this:
+// Replace the React.createElement() call in the JavaScript above with this:
 //
 //  <h1>Hiii</h1>
 //
