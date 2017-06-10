@@ -5,7 +5,8 @@ module.exports = {
   entry: {
     '1': './01-hello-world-and-jsx/main.js',
     '2': './02-create-a-custom-component/main.js',
-    '3': './03-component-state/main.js'
+    '3': './03-component-state/main.js',
+    '4': './04-component-props/main.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -46,6 +47,11 @@ module.exports = {
       template: 'src/index.ejs',
       chunks: ['3'],
       filename: '3.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      chunks: ['4'],
+      filename: '4.html'
     })
   ]
 };
