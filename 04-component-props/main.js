@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 // Props are data passed down to a component instance from its parent.
 //
 // If you look at the ReactDOM.render() tree below you'll notice we've
-// specified a prop 24hour with the value of `true`.
+// specified a prop twentyFourHourClock with the value of `true`.
 //
 // You can access props within a component's functions via this.props
 //
 // EXERCISE
 //
-// Implement the 24hour prop, so when it's true we see a time like
+// Implement the twentyFourHourClock prop, so when it's true we see a time like
 //
 // 18:39:30
 //
 // and when it's false we should see
 //
 // 6:39:30 pm
+//
+// Got extra time? Implement a displaySeconds prop which conditionally
+// displays the seconds in the clock.
 class Clock extends Component {
   constructor() {
     super();
@@ -49,10 +53,16 @@ class Clock extends Component {
   }
 }
 
+// Defining a propTypes property on a component class will give us
+// helpful errors while working on our applications.
+Clock.propTypes = {
+  twentyFourHourClock: PropTypes.bool
+}
+
 ReactDOM.render(
   <div>
     <Clock
-      24hour=true
+      twentyFourHourClock={true}
     />
   </div>,
   document.getElementById('root')
