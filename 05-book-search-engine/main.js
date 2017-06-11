@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { debounce } from 'lodash';
 
-const getBooks = function(title) {
+// Returns a Promise
+const getBookTitles = function(title) {
   const encodedTitle = encodeURIComponent(title);
   const url = `https://www.googleapis.com/books/v1/volumes?q=${encodedTitle}`;
-  return axios.get(url);
+  return axios.get(url)
+    .then((response) => {
+      return response.data.items.map((item) => item.volumeInfo.title);
+    });
 }
-
-
 
 class BookSearch extends Component {
   constructor() {
@@ -18,26 +20,22 @@ class BookSearch extends Component {
     this.state = {
       titles: []
     };
-    this.onInputChange = this.onInputChange.bind(this);
-    this.updateSearchResults = debounce( this.updateSearchResults, 200 );
-  }
 
-  updateSearchResults(searchText) {
-    getBooks(searchText)
-      .then((response) => {
-        const titles = response.data.items.map((item) => item.volumeInfo.title);
-        this.setState((previousState) => {
-          return {titles};
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    // To make `this` work properly when the callback is invoked,
+    // we create an explicitly bound version.
+    this.onInputChange = this.onInputChange.bind(this);
   }
 
   onInputChange(event) {
     const searchText = event.target.value;
-    this.updateSearchResults(searchText);
+    getBookTitles(searchText)
+      .then((titles) => {
+        this.setState((previousState) => {
+          return {
+            titles
+          }
+        })
+      })
   }
 
   render() {
@@ -52,6 +50,20 @@ class BookSearch extends Component {
     );
   }
 }
+
+// EXERCISE
+//
+// The BookSearch component has a subcomponent <input> with an onChange prop.
+// React offers props like this on built-in components that allow us
+// to bind a DOM event to a callback function.
+//
+// Build a new function in the component called updateTitles which accepts the
+// searchText variable from the onInputChange handler. The function should call
+// the getBooks() function and updates the component state with the relevant search
+// results.
+//
+// Got extra time? Debounce the updateTitles() for a smoother user experience and
+// to avoid race conditions.
 
 ReactDOM.render(
   <BookSearch />,
