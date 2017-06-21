@@ -11,7 +11,7 @@ class SiteHeader extends Component {
         <h1>Nirvana Superfan Website</h1>
         <nav>
           <ul>
-            <li><a href="about">Nirvana's Discography</a></li>
+            <li><a href="about">Nirvana Discography</a></li>
             <li><a href="contact-us">Pictures of Nirvana</a></li>
           </ul>
         </nav>
