@@ -51,6 +51,9 @@ class TimeRelativeGreeting extends Component {
 
   // render() is the only required function in a React component,
   // which describes the component's subtree.
+  //
+  // To inject variables in JSX we wrap the variable name with curly
+  // braces, like with {timeOfDay} here.
   render() {
     const { timeOfDay } = this.state;
     return (
