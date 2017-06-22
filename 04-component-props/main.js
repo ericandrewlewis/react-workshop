@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // If you look at the ReactDOM.render() tree below you'll notice we've
 // specified a prop twelveHourClock with the value of `true`
 //
-// You can access props within a component's functions via this.props
+// You can access props within a component's functions via this.props.somePropName
 //
 // EXERCISE
 //
