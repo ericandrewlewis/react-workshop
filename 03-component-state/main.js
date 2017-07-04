@@ -1,6 +1,24 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+// Below you will find an example component <TimeRelativeGreeting>.
+// Take a look at how it works, and how it uses and updates state
+// to say "Good morning" or "Good evening" depending on the time of day.
+//
+// EXERCISE
+//
+// Previously we created a <Clock> component with a hardcoded time.
+// Instead of hardcoding it, make the <Clock> component keep track
+// of the current time by setting its state, and modify the render
+// function to output the current time.
+//
+// Here's some boilerplate for getting the time-related data:
+//
+// const date = new Date();
+// date.getHours()
+// date.getMinutes()
+// date.getSeconds()
+
 const getTimeOfDay = function() {
   const date = new Date();
   if (date.getHours() < 12) {
@@ -64,18 +82,6 @@ class TimeRelativeGreeting extends Component {
   }
 }
 
-// EXERCISE
-//
-// Instead of hardcoding a random time, extend the <Clock> component
-// to keep track of the current time, and modify the render function
-// to output the time.
-//
-// Here's some boilerplate for getting the time-related data:
-//
-// const date = new Date();
-// date.getHours()
-// date.getMinutes()
-// date.getSeconds()
 class Clock extends Component {
   render() {
     return (
