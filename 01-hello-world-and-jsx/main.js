@@ -1,18 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-  React.createElement(
-    // The type of the component
-    'h1',
-    // Props (none just yet)
-    {},
-    // The component children
-    'Hi!'
-  ),
-  document.getElementById('root')
-);
-
 // ReactDOM.render() will mount a React element in a given DOM node.
 //
 // React.createElement() creates an instance of a React component.
@@ -42,7 +30,7 @@ ReactDOM.render(
 //
 // EXERCISE:
 //
-// Replace the React.createElement() call in the JavaScript above with this:
+// Replace the React.createElement() call in the JavaScript below with this:
 //
 //  <h1>Hiii</h1>
 //
@@ -50,4 +38,16 @@ ReactDOM.render(
 // easier to read.
 //
 // If you have extra time, create a nested component tree with some familiar
-// HTML elements (divs, img, table)
+// HTML elements (divs, img, table, links)
+
+ReactDOM.render(
+  React.createElement(
+    // The type of the component
+    'h1',
+    // Props (none just yet)
+    {},
+    // The component children
+    'Hi!'
+  ),
+  document.getElementById('root')
+);
