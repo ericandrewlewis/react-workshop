@@ -4,6 +4,20 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { debounce } from 'lodash';
 
+// EXERCISE
+//
+// The BookSearch component has a subcomponent <input> with an onChange prop.
+// React offers props like this on built-in components that allow us
+// to bind a DOM event to a callback function.
+//
+// Build a new function in the component called updateTitles which accepts the
+// searchText variable from the onInputChange handler. updateTitles should call
+// the getBooks() function and updates the component state with the relevant search
+// results.
+//
+// Got extra time? Debounce the updateTitles() for a smoother user experience and
+// to avoid race conditions.
+
 // Returns a Promise
 const getBookTitles = function(title) {
   const encodedTitle = encodeURIComponent(title);
@@ -21,21 +35,13 @@ class BookSearch extends Component {
       titles: []
     };
 
-    // To make `this` work properly when the callback is invoked,
-    // we create an explicitly bound version.
+    // To make `this` context work properly when the callback is invoked,
+    // we force the bind the class instance's `this` to the function
     this.onInputChange = this.onInputChange.bind(this);
   }
 
   onInputChange(event) {
     const searchText = event.target.value;
-    getBookTitles(searchText)
-      .then((titles) => {
-        this.setState((previousState) => {
-          return {
-            titles
-          }
-        })
-      })
   }
 
   render() {
@@ -50,20 +56,6 @@ class BookSearch extends Component {
     );
   }
 }
-
-// EXERCISE
-//
-// The BookSearch component has a subcomponent <input> with an onChange prop.
-// React offers props like this on built-in components that allow us
-// to bind a DOM event to a callback function.
-//
-// Build a new function in the component called updateTitles which accepts the
-// searchText variable from the onInputChange handler. The function should call
-// the getBooks() function and updates the component state with the relevant search
-// results.
-//
-// Got extra time? Debounce the updateTitles() for a smoother user experience and
-// to avoid race conditions.
 
 ReactDOM.render(
   <BookSearch />,
