@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
+    'index': './index/main.js',
+    '0': './00-es6-fundamentals/main.js',
     '1': './01-hello-world-and-jsx/main.js',
     '2': './02-create-a-custom-component/main.js',
     '3': './03-component-state/main.js',
@@ -31,9 +33,21 @@ module.exports = {
     ]
   },
   devServer: {
-    publicPath: '/dist/'
+    publicPath: '/'
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      // inject: true,
+      template: 'src/index.ejs',
+      chunks: ['index'],
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      // inject: true,
+      template: 'src/index.ejs',
+      chunks: ['0'],
+      filename: '0.html'
+    }),
     new HtmlWebpackPlugin({
       // inject: true,
       template: 'src/index.ejs',
