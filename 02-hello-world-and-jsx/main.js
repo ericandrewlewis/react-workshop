@@ -37,17 +37,16 @@ import ReactDOM from 'react-dom';
 // This is JSX. It's React's JavaScript language extension to make component trees
 // easier to read.
 //
-// If you have extra time, create a nested component tree with some familiar
-// HTML elements (divs, img, table, links)
+// Now try creating the "Hot MTA Tips" example above with JSX.
+//
+// More time? Experiment with creating nested component tree with other HTML elements
+// (divs, img, table, links)
 
 ReactDOM.render(
   React.createElement(
-    // The type of the component
-    'h1',
-    // Props (none just yet)
-    {},
-    // The component children
-    'Hi!'
+    'h1', // The type of the component
+    {},   // Props (Extra We'll learn about these later)
+    'Hi!' // The component children
   ),
   document.getElementById('root')
 );
