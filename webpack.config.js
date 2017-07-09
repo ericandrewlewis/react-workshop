@@ -4,13 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     'index': './index/main.js',
-    '0': './00-es6-fundamentals/main.js',
-    '1': './01-hello-world-and-jsx/main.js',
-    '2': './02-create-a-custom-component/main.js',
-    '3': './03-component-state/main.js',
-    '4': './04-component-props/main.js',
-    '5': './05-event-handlers/main.js',
-    '6': './06-lifting-state/main.js'
+    '1': './01-es6-fundamentals/main.js',
+    '2': './02-hello-world-and-jsx/main.js',
+    '3': './03-create-a-custom-component/main.js',
+    '4': './04-component-state/main.js',
+    '5': './05-component-props/main.js',
+    '6': './06-event-handlers/main.js',
+    '7': './07-lifting-state/main.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -45,16 +45,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       // inject: true,
       template: 'src/index.ejs',
-      chunks: ['0'],
-      filename: '0.html'
-    }),
-    new HtmlWebpackPlugin({
-      // inject: true,
-      template: 'src/index.ejs',
       chunks: ['1'],
       filename: '1.html'
     }),
     new HtmlWebpackPlugin({
+      // inject: true,
       template: 'src/index.ejs',
       chunks: ['2'],
       filename: '2.html'
@@ -78,6 +73,11 @@ module.exports = {
       template: 'src/index.ejs',
       chunks: ['6'],
       filename: '6.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      chunks: ['7'],
+      filename: '7.html'
     })
   ]
 };

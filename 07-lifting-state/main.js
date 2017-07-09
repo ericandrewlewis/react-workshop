@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { debounce } from 'lodash';
+import debounce from 'lodash.debounce';
 
 // EXERCISE
 //

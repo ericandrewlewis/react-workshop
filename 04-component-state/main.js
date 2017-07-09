@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-// Below you will find an example component <TimeRelativeGreeting>.
+// Below you will find an example component <Greeting>.
 // Take a look at how it works, and how it uses and updates state
 // to say "Good morning" or "Good evening" depending on the time of day.
 //
@@ -35,13 +35,13 @@ const getTimeOfDay = function() {
 // State is an instance property.
 // It can be changed by calling this.setState()
 // It is "local" to the component.
-class TimeRelativeGreeting extends Component {
+class Greeting extends Component {
   // Set the initial state in the component's constructor()
   constructor() {
     super();
     this.state = {
       timeOfDay: getTimeOfDay()
-    }
+    };
   }
 
   // React will automatically call componentDidMount if we define it
@@ -92,7 +92,7 @@ class Clock extends Component {
 
 ReactDOM.render(
   <div>
-    <TimeRelativeGreeting />
+    <Greeting />
     <Clock />
   </div>,
   document.getElementById('root')

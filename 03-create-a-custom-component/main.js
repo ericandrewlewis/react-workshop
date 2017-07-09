@@ -11,8 +11,8 @@ import ReactDOM from 'react-dom';
 // of React's Component class.
 //
 class SiteHeader extends Component {
-  // render() is the only required function in a React component,
-  // which describes the component's subtree.
+  // render() is a function that describes the component's subtree.
+  // It is the only required function in a React component.
   render() {
     return (
       <div>
