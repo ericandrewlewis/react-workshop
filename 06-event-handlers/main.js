@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import debounce from 'lodash.debounce';
+import css from './main.css';
 
 // EXERCISE
 //
@@ -47,9 +48,10 @@ class BookSearch extends Component {
   render() {
     const { titles } = this.state;
     return (
-      <div>
-        <input type="text" onChange={this.onInputChange} />
-        <ul>
+      <div className="BookSearch">
+        <h1>Book Search</h1>
+        <input className="BookSearch--text-input" type="text" onChange={this.onInputChange} placeholder="Enter a book title..." />
+        <ul className="BookSearch--results">
           {titles.map((title) => <div key={`title-${title}`}>{title}</div>)}
         </ul>
       </div>

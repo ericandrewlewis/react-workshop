@@ -37,7 +37,7 @@ class BookSearch extends Component {
             titles
           }
         })
-      })
+      });
   }
 
   render() {
