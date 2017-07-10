@@ -19,6 +19,7 @@
     "css-loader": "^0.28.4",
     "html-webpack-plugin": "^2.28.0",
     "lodash.debounce": "^4.0.8",
+    "netflix-movie-rating-data": "github:ericandrewlewis/netflix-movie-rating-data",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "style-loader": "^0.18.2",

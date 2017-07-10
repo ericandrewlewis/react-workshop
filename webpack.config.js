@@ -10,7 +10,7 @@ module.exports = {
     '4': './04-component-state/main.js',
     '5': './05-component-props/main.js',
     '6': './06-event-handlers/main.js',
-    '7': './07-lifting-state/main.js'
+    '7': './07-netflix-browser/main.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

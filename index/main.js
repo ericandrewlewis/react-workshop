@@ -11,6 +11,7 @@ ReactDOM.render(
       <p><a href="4.html">4. Component state</a></p>
       <p><a href="5.html">5. Component props</a></p>
       <p><a href="6.html">6. Event Handlers</a></p>
+      <p><a href="7.html">7. Netflix Browser</a></p>
     </div>
   ),
   document.getElementById('root')
