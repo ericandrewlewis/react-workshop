@@ -37,8 +37,8 @@ const getTimeOfDay = function() {
 // It is "local" to the component.
 class Greeting extends Component {
   // Set the initial state in the component's constructor()
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       timeOfDay: getTimeOfDay()
     };

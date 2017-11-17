@@ -19,8 +19,8 @@ const getBookTitles = function(title) {
 }
 
 class BookSearch extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       titles: []
     };

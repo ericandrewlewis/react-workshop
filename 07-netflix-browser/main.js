@@ -14,13 +14,16 @@ console.log(movies);
 // 1. Render a list of movies so users can browse what's on Netflix.
 // Maybe include the IMDB rating so folks can avoid bad movies.
 //
+// 2.0 Render a text input to filter by movie title.
+//
 // 2. Add a filter to browse titles in a specific genre.
 //
 // 3. Add a filter to browse titles above a certain rating.
 
+
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 

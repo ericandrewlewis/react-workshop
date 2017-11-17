@@ -24,8 +24,8 @@ import PropTypes from 'prop-types';
 
 
 class Clock extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     const date = new Date();
     this.state = {
       hour: date.getHours(),

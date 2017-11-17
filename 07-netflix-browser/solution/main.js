@@ -19,8 +19,8 @@ console.log(movies);
 // 3. Add a filter to browse titles above a certain rating.
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       genreFilter: 'all',
       ratingFilter: 'all',
